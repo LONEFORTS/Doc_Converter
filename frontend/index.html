@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>QuickDocs</title>
+</head>
+<body>
+  <h1>QuickDocs</h1>
+  <p>Local Document Converter</p>
+
+  <input type="file" id="fileInput">
+  <button onclick="upload()">Convert</button>
+
+  <p id="status">Status: Idle</p>
+
+  <script>
+    function upload() {
+      const file = document.getElementById("fileInput").files[0];
+      if (!file) {
+        alert("Select a file first");
+        return;
+      }
+      document.getElementById("status").innerText =
+        "Status: Sent to Python backend";
+    }
+  </script>
+</body>
+</html>
